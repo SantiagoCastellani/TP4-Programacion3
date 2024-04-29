@@ -69,7 +69,7 @@
                         <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Small" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="ddlProvinciaPartida" runat="server">
+                        <asp:DropDownList ID="ddlProvinciaPartida" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaPartida_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
