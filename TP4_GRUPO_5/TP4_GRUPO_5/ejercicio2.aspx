@@ -86,7 +86,7 @@
             <tr>
                 <td class="auto-style7">&nbsp;</td>
                 <td class="auto-style8">
-                    <asp:Button ID="Button1" runat="server" Text="Filtrar" />
+                    <asp:Button ID="Button1" runat="server" Text="Filtrar" OnClick="Button1_Click" />
                 </td>
                 <td>
                     <asp:Button ID="Button2" runat="server" Text="Quitar filtro" />
