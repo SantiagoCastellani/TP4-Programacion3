@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
     public partial class ejercicio1 : System.Web.UI.Page
     {
-        private const string servidorLocal = @"AXEL\SQLEXPRESS";
+        private const string servidorLocal = @"SANTIDEV\SQLEXPRESS";
         private const string urlBD = @"Data Source=" + servidorLocal + ";Initial Catalog=Viajes;Integrated Security=True";
         private string getProvincias = "SELECT * FROM Provincias";
         private string getLocalidades = "SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia";
