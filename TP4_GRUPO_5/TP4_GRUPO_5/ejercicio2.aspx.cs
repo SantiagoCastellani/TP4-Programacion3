@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
     public partial class ejercicio2 : System.Web.UI.Page
     {
-        private const string servidor = @"AXEL\SQLEXPRESS";
+        private const string servidor = @"SANTIDEV\SQLEXPRESS";
         private const string urlBD = @"Data Source="+servidor+";Initial Catalog=Neptuno;Integrated Security=True";
         private string getProductos = "SELECT IdProducto,NombreProducto,IdCategoría,CantidadPorUnidad,PrecioUnidad FROM Productos";
         protected void Page_Load(object sender, EventArgs e)
@@ -40,21 +40,67 @@ namespace TP4_GRUPO_5
 
         private void filtrarProductos()
         {
-            string filtro = string.Empty;
-            if (!string.IsNullOrEmpty(TextBox1.Text))
+            string filtroIdProducto = "";
+            int selectProducto = int.Parse(ddlProducto.SelectedItem.Value);
+            if (selectProducto == 0)
             {
-                filtro = "WHERE IdProducto = @IdProducto";
+                filtroIdProducto = "IdProducto = @IdProducto";
             }
-
-            string consulta = getProductos + " " + filtro;
+            else if (selectProducto == 1)
+            {
+                filtroIdProducto = "IdProducto > @IdProducto";
+            }
+            else
+            {
+                filtroIdProducto = "IdProducto < @IdProducto";
+            }
+            string filtroIdCategoria = "";
+            int selectCategoria = int.Parse(ddlCategoria.SelectedItem.Value);
+            if (selectCategoria == 0)
+            {
+                filtroIdCategoria = "IdCategoría = @IdCategoria";
+            }
+            else if (selectCategoria == 1)
+            {
+                filtroIdCategoria = "IdCategoría > @IdCategoria";
+            }
+            else
+            {
+                filtroIdCategoria = "IdCategoría < @IdCategoria";
+            }
 
             SqlConnection sqlConnection = new SqlConnection(urlBD);
             sqlConnection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnection);
-            if (!string.IsNullOrEmpty(TextBox1.Text))
+            string consultaCompleta = " ";
+
+            if (!string.IsNullOrEmpty(txtIdProducto.Text)|| !string.IsNullOrEmpty(txtIdCategoria.Text))
             {
-                sqlCommand.Parameters.AddWithValue("@IdProducto", TextBox1.Text);
+                consultaCompleta += "WHERE ";
+            }
+            if (!string.IsNullOrEmpty(txtIdProducto.Text))
+            {
+                consultaCompleta += filtroIdProducto;
+            }
+            if (!string.IsNullOrEmpty(txtIdProducto.Text) && !string.IsNullOrEmpty(txtIdCategoria.Text))
+            {
+                consultaCompleta += " AND ";
+            }
+            if (!string.IsNullOrEmpty(txtIdCategoria.Text))
+            {
+                consultaCompleta += filtroIdCategoria;
+            }
+
+            string consulta = getProductos + consultaCompleta;           
+
+            SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnection);
+            if (!string.IsNullOrEmpty(txtIdProducto.Text))
+            {
+                sqlCommand.Parameters.AddWithValue("@IdProducto", txtIdProducto.Text);
+            }
+            if (!string.IsNullOrEmpty(txtIdCategoria.Text))
+            {
+                sqlCommand.Parameters.AddWithValue("@IdCategoria", txtIdCategoria.Text);
             }
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);

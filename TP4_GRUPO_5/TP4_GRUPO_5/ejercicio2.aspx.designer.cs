@@ -42,13 +42,13 @@ namespace TP4_GRUPO_5
         protected global::System.Web.UI.WebControls.DropDownList ddlProducto;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtIdProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtIdProducto;
 
         /// <summary>
         /// Control Label2.
@@ -69,13 +69,13 @@ namespace TP4_GRUPO_5
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtIdCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtIdCategoria;
 
         /// <summary>
         /// Control Button1.

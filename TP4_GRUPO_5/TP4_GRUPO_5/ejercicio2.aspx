@@ -44,10 +44,13 @@
                     </td>
                     <td class="auto-style3">
                         <asp:DropDownList ID="ddlProducto" runat="server">
+                            <asp:ListItem Value="0">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="1">Mayor a:</asp:ListItem>
+                            <asp:ListItem Value="-1">Menor a:</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="166px"></asp:TextBox>
+                        <asp:TextBox ID="txtIdProducto" runat="server" Width="166px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -65,10 +68,13 @@
                     </td>
                     <td class="auto-style3">
                         <asp:DropDownList ID="ddlCategoria" runat="server">
+                            <asp:ListItem Value="0">Igual a:</asp:ListItem>
+                            <asp:ListItem Value="1">Mayor a:</asp:ListItem>
+                            <asp:ListItem Value="-1">Menor a:</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox2" runat="server" Width="163px"></asp:TextBox>
+                        <asp:TextBox ID="txtIdCategoria" runat="server" Width="163px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
