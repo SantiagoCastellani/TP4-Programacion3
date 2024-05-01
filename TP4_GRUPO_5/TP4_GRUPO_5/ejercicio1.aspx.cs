@@ -37,49 +37,53 @@ namespace TP4_GRUPO_5
                 ddlProvinciaPartida.DataValueField = "IdProvincia";
                 ddlProvinciaPartida.DataBind();
 
-
-
                 connection.Close();
                 cargarLocalidades();
             }
-            
+
         }
 
         private void cargarLocalidades()
         {
             int idProvincia = Convert.ToInt32(ddlProvinciaPartida.SelectedValue);
-            
-            
-                SqlConnection connection = new SqlConnection(urlBD);
 
-                connection.Open();
 
-                //crear comando sql
+            SqlConnection connection = new SqlConnection(urlBD);
 
-                SqlCommand sqlCommand = new SqlCommand(getLocalidades, connection);
-                sqlCommand.Parameters.AddWithValue("@IdProvincia", idProvincia);
+            connection.Open();
 
-                //ejecutar consulta
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            //crear comando sql
 
-                ddlLocalidadPartida.Items.Clear();
+            SqlCommand sqlCommand = new SqlCommand(getLocalidades, connection);
+            sqlCommand.Parameters.AddWithValue("@IdProvincia", idProvincia);
 
-                // Asignar los resultados al ddlLocalidad
+            //ejecutar consulta
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                if (sqlDataReader.HasRows)
-                {
-                    ddlLocalidadPartida.DataSource = sqlDataReader;
-                    ddlLocalidadPartida.DataTextField = "NombreLocalidad";
-                    ddlLocalidadPartida.DataValueField = "IdLocalidad";
-                    ddlLocalidadPartida.DataBind();
-                }
-                sqlDataReader.Close();
-        
+            ddlLocalidadPartida.Items.Clear();
+
+            // Asignar los resultados al ddlLocalidad
+
+            if (sqlDataReader.HasRows)
+            {
+                ddlLocalidadPartida.DataSource = sqlDataReader;
+                ddlLocalidadPartida.DataTextField = "NombreLocalidad";
+                ddlLocalidadPartida.DataValueField = "IdLocalidad";
+                ddlLocalidadPartida.DataBind();
+            }
+            sqlDataReader.Close();
+
         }
-
+        
         protected void ddlProvinciaPartida_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarLocalidades();
+            
+        }
+
+        protected void ddlProvinciaDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
