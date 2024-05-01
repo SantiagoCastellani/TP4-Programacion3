@@ -34,6 +34,13 @@
             height: 31px;
             width: 446px;
         }
+        .auto-style9 {
+            height: 26px;
+        }
+        .auto-style10 {
+            width: 446px;
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -64,11 +71,11 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9">
                         <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Small" Text="PROVINCIA:"></asp:Label>
                     </td>
-                    <td class="auto-style7">
+                    <td class="auto-style10">
                         <asp:DropDownList ID="ddlProvinciaPartida" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaPartida_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
@@ -114,7 +121,7 @@
                         <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Size="Small" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:DropDownList ID="ddlProvinciaDestino" runat="server" OnSelectedIndexChanged="ddlProvinciaDestino_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -126,7 +133,7 @@
                         <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="Small" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:DropDownList ID="ddlLocalidadDestino" runat="server">
                         </asp:DropDownList>
                     </td>
                     <td>
