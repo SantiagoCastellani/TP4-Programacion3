@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
     public partial class ejercicio1 : System.Web.UI.Page
     {
-        private const string servidorLocal = @"DESKTOP-GUUQKR5\SQLEXPRESS";
+        private const string servidorLocal = @"\SQLEXPRESS";
         private const string urlBD = @"Data Source=" + servidorLocal + ";Initial Catalog=Viajes;Integrated Security=True";
         private string getProvincias = "SELECT * FROM Provincias";
         private string getLocalidades = "SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia";
@@ -38,12 +38,15 @@ namespace TP4_GRUPO_5
                 ddlProvinciaPartida.DataBind();
 
                 connection.Close();
-                cargarLocalidades();
+                cargarLocalidadesPartida();
+                int provinciaSeleccionada = Convert.ToInt32(ddlProvinciaPartida.SelectedItem.Value);
+                cargarProvinciaDestinoExcepto(provinciaSeleccionada);
+                cargarLocalidadesDestino();
             }
 
         }
 
-        private void cargarLocalidades()
+        private void cargarLocalidadesPartida()
         {
             int idProvincia = Convert.ToInt32(ddlProvinciaPartida.SelectedValue);
 
@@ -77,13 +80,60 @@ namespace TP4_GRUPO_5
         
         protected void ddlProvinciaPartida_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarLocalidades();
-            
+            cargarLocalidadesPartida();
+            int idProvincia = Convert.ToInt32(ddlProvinciaPartida.SelectedValue);
+            cargarProvinciaDestinoExcepto(idProvincia);
+            cargarLocalidadesDestino();
         }
 
         protected void ddlProvinciaDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            cargarLocalidadesDestino();
+        }
+
+        private void cargarProvinciaDestinoExcepto(int idProvincia)
+        {
+            SqlConnection connection = new SqlConnection(urlBD);
+            connection.Open();
+
+            string getProvinciasFiltradas = getProvincias + " WHERE IdProvincia<>" + idProvincia;
+            SqlCommand sqlCommand = new SqlCommand(getProvinciasFiltradas, connection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            ddlProvinciaDestino.Items.Clear();
+
+            if (sqlDataReader.HasRows)
+            {
+                ddlProvinciaDestino.DataSource = sqlDataReader;
+                ddlProvinciaDestino.DataTextField = "NombreProvincia";
+                ddlProvinciaDestino.DataValueField = "IdProvincia";
+                ddlProvinciaDestino.DataBind();
+            }
+            sqlDataReader.Close();
+        }
+
+        private void cargarLocalidadesDestino()
+        {
+            int idProvincia = Convert.ToInt32(ddlProvinciaDestino.SelectedValue);
+
+            SqlConnection connection = new SqlConnection(urlBD);
+            connection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand(getLocalidades, connection);
+            sqlCommand.Parameters.AddWithValue("@IdProvincia", idProvincia);
+
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            ddlLocalidadDestino.Items.Clear();
+
+            if (sqlDataReader.HasRows)
+            {
+                ddlLocalidadDestino.DataSource = sqlDataReader;
+                ddlLocalidadDestino.DataTextField = "NombreLocalidad";
+                ddlLocalidadDestino.DataValueField = "IdLocalidad";
+                ddlLocalidadDestino.DataBind();
+            }
+            sqlDataReader.Close();
         }
     }
 }
