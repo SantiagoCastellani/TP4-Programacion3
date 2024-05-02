@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
     public partial class ejercicio2 : System.Web.UI.Page
     {
-        private const string servidor = @"\SQLEXPRESS";
+        private const string servidor = @"DESKTOP-GUUQKR5\SQLEXPRESS";
         private const string urlBD = @"Data Source="+servidor+";Initial Catalog=Neptuno;Integrated Security=True";
         private string getProductos = "SELECT IdProducto,NombreProducto,IdCategoría,CantidadPorUnidad,PrecioUnidad FROM Productos";
         protected void Page_Load(object sender, EventArgs e)

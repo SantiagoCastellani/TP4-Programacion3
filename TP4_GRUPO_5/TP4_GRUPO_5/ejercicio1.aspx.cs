@@ -7,11 +7,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
+
+
 namespace TP4_GRUPO_5
 {
     public partial class ejercicio1 : System.Web.UI.Page
     {
-        private const string servidorLocal = @"\SQLEXPRESS";
+        private const string servidorLocal = @"DESKTOP-GUUQKR5\SQLEXPRESS";
         private const string urlBD = @"Data Source=" + servidorLocal + ";Initial Catalog=Viajes;Integrated Security=True";
         private string getProvincias = "SELECT * FROM Provincias";
         private string getLocalidades = "SELECT * FROM Localidades WHERE IdProvincia = @IdProvincia";
@@ -134,6 +136,16 @@ namespace TP4_GRUPO_5
                 ddlLocalidadDestino.DataBind();
             }
             sqlDataReader.Close();
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        protected void btnComprar_Click1(object sender, EventArgs e)
+        {
+            lblMensajeCompra.Text = "Lo sentimos, de momento no es posible realizar una compra.";
         }
     }
 }
