@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
 
 
-    public partial class ejercicio3
+    public partial class WebForm1
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace TP4_GRUPO_5
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ddlTemas.
+        /// Control gvLibros.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTemas;
+        protected global::System.Web.UI.WebControls.GridView gvLibros;
 
         /// <summary>
-        /// Control lbLibros.
+        /// Control lbConsultarTema.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbLibros;
+        protected global::System.Web.UI.WebControls.LinkButton lbConsultarTema;
     }
 }
