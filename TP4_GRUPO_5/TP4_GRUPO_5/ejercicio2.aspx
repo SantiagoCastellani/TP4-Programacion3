@@ -95,7 +95,7 @@
                     <asp:Button ID="Button1" runat="server" Text="Filtrar" OnClick="Button1_Click" />
                 </td>
                 <td>
-                    <asp:Button ID="Button2" runat="server" Text="Quitar filtro" />
+                    <asp:Button ID="Button2" runat="server" Text="Quitar filtro" OnClick="Button2_Click" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

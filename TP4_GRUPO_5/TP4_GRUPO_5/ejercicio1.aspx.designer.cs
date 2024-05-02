@@ -87,13 +87,13 @@ namespace TP4_GRUPO_5
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control DropDownList3.
+        /// Control ddlProvinciaDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvinciaDestino;
 
         /// <summary>
         /// Control Label6.
@@ -105,13 +105,13 @@ namespace TP4_GRUPO_5
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control DropDownList4.
+        /// Control ddlLocalidadDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLocalidadDestino;
 
         /// <summary>
         /// Control btnComprar.
@@ -130,5 +130,23 @@ namespace TP4_GRUPO_5
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMensajeCompra;
+
+        /// <summary>
+        /// Control lblDetalleMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleMensaje;
+
+        /// <summary>
+        /// Control lblDetalleMensaje2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleMensaje2;
     }
 }

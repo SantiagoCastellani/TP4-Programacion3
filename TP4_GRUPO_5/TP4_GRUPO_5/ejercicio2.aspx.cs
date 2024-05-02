@@ -112,5 +112,13 @@ namespace TP4_GRUPO_5
             sqlConnection.Close();
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            txtIdProducto.Text = "";
+            txtIdCategoria.Text = "";
+            filtrarProductos();
+
+
+        }
     }
 }

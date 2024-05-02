@@ -9,6 +9,7 @@
     <style type="text/css">
         .auto-style1 {
             width: 100%;
+            height: 287px;
         }
         .auto-style2 {
             width: 92px;
@@ -33,6 +34,21 @@
         .auto-style8 {
             height: 31px;
             width: 446px;
+        }
+        .auto-style9 {
+            height: 26px;
+        }
+        .auto-style10 {
+            width: 446px;
+            height: 26px;
+        }
+        .auto-style11 {
+            width: 92px;
+            height: 26px;
+        }
+        .auto-style12 {
+            width: 203px;
+            height: 26px;
         }
     </style>
 </head>
@@ -64,11 +80,11 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9">
                         <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Small" Text="PROVINCIA:"></asp:Label>
                     </td>
-                    <td class="auto-style7">
+                    <td class="auto-style10">
                         <asp:DropDownList ID="ddlProvinciaPartida" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaPartida_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
@@ -114,36 +130,43 @@
                         <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Size="Small" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:DropDownList ID="ddlProvinciaDestino" runat="server" OnSelectedIndexChanged="ddlProvinciaDestino_SelectedIndexChanged" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12">
                         <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="Small" Text="LOCALIDAD:"></asp:Label>
                     </td>
-                    <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList4" runat="server">
+                    <td class="auto-style10">
+                        <asp:DropDownList ID="ddlLocalidadDestino" runat="server">
                         </asp:DropDownList>
                     </td>
-                    <td>
-                        <asp:Button ID="btnComprar" runat="server" Text="Comprar Boletos" />
+                    <td class="auto-style9">
+                        <asp:Button ID="btnComprar" runat="server" Text="Comprar Boletos" OnClick="btnComprar_Click1" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
         </div>
+        <p>
         <asp:Label ID="lblMensajeCompra" runat="server"></asp:Label>
+                    </p>
+        <asp:Label ID="lblDetalleMensaje" runat="server"></asp:Label>
+        <p>
+            <asp:Label ID="lblDetalleMensaje2" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
