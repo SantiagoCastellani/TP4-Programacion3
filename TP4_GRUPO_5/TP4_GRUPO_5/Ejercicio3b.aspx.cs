@@ -10,7 +10,7 @@ namespace TP4_GRUPO_5
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private const string servidor = @"AXEL\SQLEXPRESS";
+        private const string servidor = @"SANTIDEV\SQLEXPRESS";
         private const string urlBD = @"Data Source=" + servidor + ";Initial Catalog=Libreria;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {

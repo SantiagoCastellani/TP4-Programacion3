@@ -154,13 +154,19 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">
-        <asp:Label ID="lblMensajeCompra" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
         </div>
+        <p>
+        <asp:Label ID="lblMensajeCompra" runat="server"></asp:Label>
+                    </p>
+        <asp:Label ID="lblDetalleMensaje" runat="server"></asp:Label>
+        <p>
+            <asp:Label ID="lblDetalleMensaje2" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
