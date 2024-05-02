@@ -11,7 +11,7 @@ namespace TP4_GRUPO_5
 {
     public partial class ejercicio3 : System.Web.UI.Page
     {
-        private const string servidor = @"DESKTOP-GUUQKR5\SQLEXPRESS";
+        private const string servidor = @"AXEL\SQLEXPRESS";
         private const string urlBD = @"Data Source=" + servidor + ";Initial Catalog=Libreria;Integrated Security=True";
         private string getTemas = "SELECT IdTema,Tema FROM Temas";
         protected void Page_Load(object sender, EventArgs e)
@@ -43,5 +43,10 @@ namespace TP4_GRUPO_5
             
         }
 
+        protected void lbLibros_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ejercicio3b.aspx?idTema=" + ddlTemas.SelectedValue);
+
+        }
     }
 }
